@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+Theme Name: Planty
+Template: blankslate
+Description: Un thème développé pour Planty.
+Author: Studio 22
+Author URI: https://studio22.xyz
+Version: 1.0
+
+studio22, (C) 2022 https://studio22.xyz
+*/
+
+:root {
+  --dark-pink: #D2776A;
+  --light-pink: #E0B9B4;
+  --green: #3B8E46;
+  --bg-color: #ECE2DA;
+}
