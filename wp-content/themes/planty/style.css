@@ -13,8 +13,26 @@ studio22, (C) 2022 https://studio22.xyz
 */
 
 :root {
-  --dark-pink: #D2776A;
-  --light-pink: #E0B9B4;
-  --green: #3B8E46;
-  --bg-color: #ECE2DA;
+  --dark-pink: #D2776a;
+  --light-pink: #e0b9b4;
+  --green: #3b8e46;
+  --bg-color: #ece2da;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Typos */
+  --f-base: 'Syne', sans-serif;
+
+  --w-menu: 400;
+  --s-menu: 16px;
+  --l-menu: 0.192px;
+
+  /* Header */
+  --padding-header: 30px 37px;
+  --flex-gap-menu: 60px;
+}
+
+* {
+  font-family: var(--f-base);
 }
