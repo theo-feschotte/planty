@@ -1,12 +1,12 @@
             </main>
         </div>
 
-        <footer id="footer" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <footer id="footer">
             <?php
                 wp_nav_menu([
                     'theme_location' => 'menu-footer',
-                    'link_before' => '<span itemprop="name">',
-                    'link_after' => '</span>',
+                    'container' => '',
+                    'menu_class' => 'menu-list',
                 ]);
             ?>
         </footer>

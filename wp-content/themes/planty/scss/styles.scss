@@ -1,0 +1,75 @@
+@use "sass:math";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/content";
+
+@function rem($size) {
+    @return $size / 16px * 1rem;
+}
+
+:root {
+    --dark-pink: #D2776a;
+    --light-pink: #e0b9b4;
+    --green: #3b8e46;
+    --bg-color: #ece2da;
+    
+    --white: #ffffff;
+    --black: #000000;
+    
+    /* Fonts family */
+    --f-base: 'Syne', sans-serif;
+
+    /* Fonts size */
+    --s-h1: #{rem(38px)};
+    --s-h2: #{rem(30px)};
+    --s-h3: #{rem(30px)};
+    --s-base: #{rem(16px)};
+
+    /* Fonts weight */
+    --w-h1: 800;
+    --w-h2: 800;
+    --w-h3: 700;
+    --w-base: 400;
+
+    /* Fonts line-height */
+    --l-h1: normal;
+    --l-h2: normal;
+    --l-h3: normal;
+    --l-base: normal;
+}
+
+body,
+* {
+    font-family: var(--f-base);
+    font-size: var(--s-base);
+    font-weight: var(--w-base);
+    line-height: var(--l-base);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+h1 {
+    font-size: var(--s-h1);
+    font-weight: var(--w-h1);
+    line-height: var(--l-h1);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: var(--s-h2);
+    font-weight: var(--w-h2);
+    line-height: var(--l-h2);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: var(--s-h3);
+    font-weight: var(--w-h3);
+    line-height: var(--l-h3);
+    text-align: center;
+    text-transform: uppercase;
+}

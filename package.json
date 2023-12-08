@@ -1,0 +1,23 @@
+{
+  "name": "planty",
+  "version": "1.0.0",
+  "description": "**Planty, Une jeune marque de boissons énergisantes à base de plantes.**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass -w wp-content/themes/planty/scss/styles.scss:wp-content/themes/planty/dist/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theo-feschotte/planty.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theo-feschotte/planty/issues"
+  },
+  "homepage": "https://github.com/theo-feschotte/planty#readme",
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
+}

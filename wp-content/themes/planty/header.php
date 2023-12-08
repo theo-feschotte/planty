@@ -5,6 +5,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width" />
     
+    <!-- Google Fonts - Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap">
@@ -16,17 +17,15 @@
 
     <?php wp_body_open(); ?>
 
-    <div id="wrapper" class="hfeed">
+    <div id="wrapper">
 
-        <header id="header" role="banner">
+        <header id="header">
             <?php the_custom_logo(); ?>
-            <nav id="menu">
+            <nav id="menu" class="menu">
                 <?php
                     wp_nav_menu([
                         'theme_location' => 'main-menu',
                         'container' => '',
-                        'container_class' => '',
-                        'container_id' => 'menu-header',
                         'menu_class' => 'menu-list',
                     ]);
                 ?>
