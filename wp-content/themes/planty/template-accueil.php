@@ -76,52 +76,58 @@ $testimonials_list = [
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
 
-        <?php echo( $hero_title ); ?><?php echo( "<br><br>" ); ?>
-        <?php echo( $hero_background_color ); ?><?php echo( "<br><br>" ); ?>
-        <?php foreach ($hero_images as $image) {
-            echo( $image["image"]["title"] );
-            echo( "<br>" );
-            echo( $image["image"]["url"] );
-            echo( "<br>" );
-            echo( $image["image"]["alt"] );
-            echo( "<br><br>" );
-        } ?><?php echo( "<br><br>" ); ?>
+        <section class="c-hero" style="background-color:<?php echo( $hero_background_color ); ?>;">
+            <div class="o-wrapper">
+                <div class="c-hero__title">
+                    <?php echo( $hero_title ? $hero_title : the_title() ); ?>
+                </div>
+                <div class="c-hero__images">
+                    <?php foreach ($hero_images as $image) {
+                        echo( '<img class="c-hero__images-img" src="'.$image["image"]["url"].'" alt="'.$image["image"]["alt"].'">' );
+                    } ?>
+                </div>
+            </div>
+        </section>
 
-        <?php echo( $texts ); ?><?php echo( "<br><br>" ); ?>
-        <?php echo( $texts_background_color ); ?><?php echo( "<br><br>" ); ?>
+        <section class="c-texts" style="background-color:<?php echo( $texts_background_color ); ?>;">
+            <div class="o-wrapper">
+                <?php echo( $texts ); ?>
+            </div>
+        </section>
+        
+        <section class="c-flavours" style="background-color:<?php echo( $flavours_background_color ); ?>;">
+            <div class="o-wrapper">
+                <div class="c-flavours__title">
+                    <?php echo( $flavours_title ); ?>
+                </div>
+                <ul class="c-flavours__list">
+                    <?php foreach ($flavours_list as $flavour) {
+                        echo( '<li class="c-flavours__list-item">' );
+                            echo( '<p>'.$flavour["name"].'</p>' );
+                            echo( '<img class="c-flavours__list-image" src="'.$flavour["image"]["url"].'" alt="'.$flavour["image"]["alt"].'">' );
+                        echo( '</li>' );
+                    } ?>
+                </ul>
+                <?php echo( '<a class="c-flavours__link button-link" href="'.$flavours_link["url"].'" target="'.$flavours_link["target"].'">'.$flavours_link["title"].'</a>' ); ?>
+            </div>
+        </section>
 
-        <?php echo( $flavours_title ); ?><?php echo( "<br><br>" ); ?>
-        <?php echo( $flavours_link["title"] ); ?><?php echo( "<br><br>" ); ?>
-        <?php echo( $flavours_link["url"] ); ?><?php echo( "<br><br>" ); ?>
-        <?php echo( $flavours_link["target"] ); ?><?php echo( "valeur_vide<br><br>" ); ?>
-        <?php echo( $flavours_background_color ); ?><?php echo( "<br><br>" ); ?>
-        <?php foreach ($flavours_list as $flavour) {
-            echo( $flavour["name"] );
-            echo( "<br>" );
-            echo( $flavour["image"]["title"] );
-            echo( "<br>" );
-            echo( $flavour["image"]["url"] );
-            echo( "<br>" );
-            echo( $flavour["image"]["alt"] );
-            echo( "<br>" );
-            echo( "<br><br>" );
-        } ?><?php echo( "<br><br>" ); ?>
-
-        <?php echo( $testimonials_title ); ?><?php echo( "<br><br>" ); ?>
-        <?php echo( $testimonials_background_color ); ?><?php echo( "<br><br>" ); ?>
-        <?php foreach ($testimonials_list as $testimonial) {
-            echo( $testimonial["name"] );
-            echo( "<br>" );
-            echo( $testimonial["texts"] );
-            echo( "<br>" );
-            echo( $testimonial["image"]["title"] );
-            echo( "<br>" );
-            echo( $testimonial["image"]["url"] );
-            echo( "<br>" );
-            echo( $testimonial["image"]["alt"] );
-            echo( "<br>" );
-            echo( "<br><br>" );
-        } ?><?php echo( "<br><br>" ); ?>
+        <section class="c-testimonials" style="background-color:<?php echo( $testimonials_background_color ); ?>;">
+            <div class="o-wrapper">
+                <div class="c-testimonials__title">
+                    <?php echo( $testimonials_title ); ?>
+                </div>
+                <ul class="c-testimonials__list">
+                    <?php foreach ($testimonials_list as $testimonial) {
+                        echo( '<li class="c-testimonials__list-item">' );
+                            echo( '<p class="c-testimonials__list-name">'.$testimonial["name"].'</p>' );
+                            echo( '<p class="c-testimonials__list-texts">'.$testimonial["texts"].'</p>' );
+                            echo( '<img class="c-testimonials__list-image" src="'.$testimonial["image"]["url"].'" alt="'.$testimonial["image"]["alt"].'">' );
+                        echo( '</li>' );
+                    } ?>
+                </ul>
+            </div>
+        </section>
 
     </div>
 </article>
