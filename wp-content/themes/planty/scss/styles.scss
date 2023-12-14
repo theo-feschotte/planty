@@ -4,6 +4,7 @@
 @import "./partials/footer";
 
 @import "./components/c-hero";
+@import "./components/c-texts";
 
 @function rem($size) {
     @return calc(($size / 16px) * 1rem);
@@ -19,8 +20,9 @@
     --black: #000000;
 
     /* Wrapper */
-    --wrapper: calc(var(--wrapper-max) - (134px * 2));
     --wrapper-max: 1440px;
+    --wrapper-xl: calc(var(--wrapper-max) - (130px * 2));
+    --wrapper-sm: calc(var(--wrapper-max) - (485px * 2));
     
     /* Fonts family */
     --f-base: 'Syne', sans-serif;
@@ -83,6 +85,14 @@ h3 {
 .o-wrapper {
     width: var(--wrapper);
     max-width: var(--wrapper-max);
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}
+
+.o-wrapper-sm {
+    width: var(--wrapper-sm);
+    max-width: var(--wrapper-sm-max);
     margin: 0 auto;
     padding: 0;
     display: block;

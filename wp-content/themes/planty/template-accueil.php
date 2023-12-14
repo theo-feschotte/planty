@@ -26,7 +26,7 @@ include "variables-accueil.php";
         </section>
 
         <section class="c-texts" style="background-color:<?php echo( $texts_background_color ); ?>;">
-            <div class="o-wrapper">
+            <div class="o-wrapper-sm">
                 <?php echo( $texts ); ?>
             </div>
         </section>
