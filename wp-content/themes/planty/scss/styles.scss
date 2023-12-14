@@ -1,10 +1,12 @@
 @use "sass:math";
-@import "./components/header";
-@import "./components/footer";
-@import "./components/content";
+
+@import "./partials/header";
+@import "./partials/footer";
+
+@import "./components/c-hero";
 
 @function rem($size) {
-    @return $size / 16px * 1rem;
+    @return calc(($size / 16px) * 1rem);
 }
 
 :root {
@@ -15,6 +17,10 @@
     
     --white: #ffffff;
     --black: #000000;
+
+    /* Wrapper */
+    --wrapper: calc(var(--wrapper-max) - (134px * 2));
+    --wrapper-max: 1440px;
     
     /* Fonts family */
     --f-base: 'Syne', sans-serif;
@@ -47,7 +53,7 @@ body,
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--white);
 }
 
 h1 {
@@ -72,4 +78,12 @@ h3 {
     line-height: var(--l-h3);
     text-align: center;
     text-transform: uppercase;
+}
+
+.o-wrapper {
+    width: var(--wrapper);
+    max-width: var(--wrapper-max);
+    margin: 0 auto;
+    padding: 0;
+    display: block;
 }

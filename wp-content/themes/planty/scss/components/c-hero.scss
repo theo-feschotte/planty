@@ -1,0 +1,38 @@
+.c-hero {
+    padding: 100px 0;
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__images {
+        height: fit-content;
+        &-img {
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            &:nth-child(1) {
+                width: 85%;
+                object-fit: contain;
+                position: relative;
+                z-index: 1;
+            }
+            // Feuilles gauche
+            &:nth-child(2) {
+                width: 350px;
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                z-index: 0;
+            }
+            // Feuilles droite
+            &:nth-child(3) {
+                width: 350px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 0;
+            }
+        }
+    }
+}
