@@ -5,6 +5,7 @@
 
 @import "./components/c-hero";
 @import "./components/c-texts";
+@import "./components/c-flavours";
 
 @function rem($size) {
     @return calc(($size / 16px) * 1rem);
@@ -25,33 +26,33 @@
     --wrapper-sm: calc(var(--wrapper-max) - (485px * 2));
     
     /* Fonts family */
-    --f-base: 'Syne', sans-serif;
+    --f-f-base: 'Syne', sans-serif;
 
     /* Fonts size */
-    --s-h1: #{rem(38px)};
-    --s-h2: #{rem(30px)};
-    --s-h3: #{rem(30px)};
-    --s-base: #{rem(16px)};
+    --f-s-h1: #{rem(38px)};
+    --f-s-h2: #{rem(30px)};
+    --f-s-h3: #{rem(30px)};
+    --f-s-base: #{rem(16px)};
 
     /* Fonts weight */
-    --w-h1: 800;
-    --w-h2: 800;
-    --w-h3: 700;
-    --w-base: 400;
+    --f-w-h1: 800;
+    --f-w-h2: 800;
+    --f-w-h3: 700;
+    --f-w-base: 400;
 
     /* Fonts line-height */
-    --l-h1: normal;
-    --l-h2: normal;
-    --l-h3: normal;
-    --l-base: normal;
+    --f-lh-h1: normal;
+    --f-lh-h2: normal;
+    --f-lh-h3: normal;
+    --f-lh-base: normal;
 }
 
 body,
 * {
-    font-family: var(--f-base);
-    font-size: var(--s-base);
-    font-weight: var(--w-base);
-    line-height: var(--l-base);
+    font-family: var(--f-f-base);
+    font-size: var(--f-s-base);
+    font-weight: var(--f-w-base);
+    line-height: var(--f-lh-base);
 }
 
 body {
@@ -59,31 +60,49 @@ body {
 }
 
 h1 {
-    font-size: var(--s-h1);
-    font-weight: var(--w-h1);
-    line-height: var(--l-h1);
+    font-size: var(--f-s-h1);
+    font-weight: var(--f-w-h1);
+    line-height: var(--f-lh-h1);
     text-align: center;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: var(--s-h2);
-    font-weight: var(--w-h2);
-    line-height: var(--l-h2);
+    font-size: var(--f-s-h2);
+    font-weight: var(--f-w-h2);
+    line-height: var(--f-lh-h2);
     text-align: center;
     text-transform: uppercase;
 }
 
 h3 {
-    font-size: var(--s-h3);
-    font-weight: var(--w-h3);
-    line-height: var(--l-h3);
+    font-size: var(--f-s-h3);
+    font-weight: var(--f-w-h3);
+    line-height: var(--f-lh-h3);
     text-align: center;
     text-transform: uppercase;
 }
 
-.o-wrapper {
-    width: var(--wrapper);
+.btn-link {
+    width: fit-content;
+    margin: 50px auto;
+    padding: 20px 50px;
+    display: block;
+    font-size: var(--f-s-base);
+    font-weight: var(--f-w-base);
+    line-height: var(--f-lh-base);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: var(--light-pink);
+    &:hover {
+        background-color: var(--dark-pink);
+    }
+}
+
+.o-wrapper-xl {
+    width: var(--wrapper-xl);
     max-width: var(--wrapper-max);
     margin: 0 auto;
     padding: 0;
@@ -92,7 +111,7 @@ h3 {
 
 .o-wrapper-sm {
     width: var(--wrapper-sm);
-    max-width: var(--wrapper-sm-max);
+    max-width: var(--wrapper-max);
     margin: 0 auto;
     padding: 0;
     display: block;

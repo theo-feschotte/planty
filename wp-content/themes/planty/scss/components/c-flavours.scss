@@ -1,0 +1,42 @@
+.c-flavours {
+    padding: 100px 0;
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        padding: 0 150px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 30px;
+        &-item {
+            width: calc((100% - 30px) / 2);
+            position: relative;
+        }
+        &-name {
+            width: 100%;
+            height: 100%;
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--white);
+            font-size: 48px;
+            font-weight: var(--f-w-h2);
+            line-height: normal;
+            text-align: center;
+            text-transform: uppercase;
+            word-break: break-all;
+        }
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
