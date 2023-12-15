@@ -41,36 +41,50 @@ footer .menu-item a {
 .c-hero {
   padding: 100px 0;
 }
+.c-hero--bg-img {
+  padding-top: 180px;
+  background-size: 220px;
+  background-position: top 20% left 10%;
+  background-repeat: no-repeat;
+}
+.c-hero--bg-img .c-hero__title {
+  margin-bottom: 0;
+}
 .c-hero__title {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+}
+.c-hero__title h1 {
+  margin-bottom: 25px;
 }
 .c-hero__images {
-  height: fit-content;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
 }
 .c-hero__images-img {
-  height: auto;
-  margin: 0 auto;
-  display: block;
+  width: auto;
+  height: 400px;
+  margin: 0;
 }
 .c-hero__images-img:nth-child(1) {
-  width: 85%;
-  object-fit: contain;
-  position: relative;
-  z-index: 1;
+  width: auto;
+  height: 100%;
 }
 .c-hero__images-img:nth-child(2) {
-  width: 350px;
   position: absolute;
-  top: 50%;
+  bottom: 5%;
   right: 50%;
-  z-index: 0;
+  z-index: -1;
 }
 .c-hero__images-img:nth-child(3) {
-  width: 350px;
   position: absolute;
-  top: 50%;
+  bottom: 5%;
   left: 50%;
-  z-index: 0;
+  z-index: -1;
 }
 
 .c-texts {
@@ -160,9 +174,56 @@ footer .menu-item a {
 }
 .c-testimonials__list-texts__name {
   margin-bottom: 10px;
-  font-size: var(--f-s-h3);
-  font-weight: var(--f-w-h3);
-  line-height: var(--f-lh-h3);
+  color: var(--green);
+}
+
+.c-teams {
+  padding: 100px 0;
+  background-size: 220px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+.c-teams__title {
+  margin-bottom: 50px;
+}
+.c-teams__list {
+  display: flex;
+  justify-content: center;
+  gap: 160px;
+}
+.c-teams__list-item {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.c-teams__list-image {
+  width: 167px;
+  height: 167px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.c-teams__list-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.c-teams__list-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.c-teams__list-texts__name {
+  margin-bottom: 10px;
+}
+
+.c-forms {
+  padding: 150px 0 75px 0;
+  background-size: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 :root {
@@ -175,6 +236,7 @@ footer .menu-item a {
   /* Wrapper */
   --wrapper-max: 1440px;
   --wrapper-xl: calc(var(--wrapper-max) - (130px * 2));
+  --wrapper-md: calc(var(--wrapper-max) - (325px * 2));
   --wrapper-sm: calc(var(--wrapper-max) - (485px * 2));
   /* Fonts family */
   --f-f-base: "Syne", sans-serif;
@@ -182,17 +244,23 @@ footer .menu-item a {
   --f-s-h1: 2.375rem;
   --f-s-h2: 1.875rem;
   --f-s-h3: 1.875rem;
+  --f-s-h4: 1.25rem;
+  --f-s-base-strong: 1.25rem;
   --f-s-base: 1rem;
   /* Fonts weight */
   --f-w-h1: 800;
   --f-w-h2: 800;
   --f-w-h3: 700;
+  --f-w-h4: 700;
+  --f-w-base-strong: 400;
   --f-w-base: 400;
   /* Fonts line-height */
-  --f-lh-h1: normal;
-  --f-lh-h2: normal;
-  --f-lh-h3: normal;
-  --f-lh-base: normal;
+  --f-lh-h1: 45.6px;
+  --f-lh-h2: 36px;
+  --f-lh-h3: 36px;
+  --f-lh-h4: 24px;
+  --f-lh-base-strong: 24px;
+  --f-lh-base: 19.2px;
 }
 
 body,
@@ -202,33 +270,46 @@ body,
   font-weight: var(--f-w-base);
   line-height: var(--f-lh-base);
 }
+body strong,
+* strong {
+  font-family: var(--f-f-base-strong);
+  font-size: var(--f-s-base-strong);
+  font-weight: var(--f-w-base-strong);
+  line-height: var(--f-lh-base-strong);
+}
 
 body {
   background-color: var(--white);
 }
 
-h1 {
+h1,
+o-h1 {
   font-size: var(--f-s-h1);
   font-weight: var(--f-w-h1);
   line-height: var(--f-lh-h1);
-  text-align: center;
   text-transform: uppercase;
 }
 
-h2 {
+h2,
+o-h2 {
   font-size: var(--f-s-h2);
   font-weight: var(--f-w-h2);
   line-height: var(--f-lh-h2);
-  text-align: center;
   text-transform: uppercase;
 }
 
-h3 {
+h3,
+o-h3 {
   font-size: var(--f-s-h3);
   font-weight: var(--f-w-h3);
   line-height: var(--f-lh-h3);
-  text-align: center;
-  text-transform: uppercase;
+}
+
+h4,
+o-h4 {
+  font-size: var(--f-s-h4);
+  font-weight: var(--f-w-h4);
+  line-height: var(--f-lh-h4);
 }
 
 .btn-link {
@@ -251,6 +332,14 @@ h3 {
 
 .o-wrapper-xl {
   width: var(--wrapper-xl);
+  max-width: var(--wrapper-max);
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+}
+
+.o-wrapper-md {
+  width: var(--wrapper-md);
   max-width: var(--wrapper-max);
   margin: 0 auto;
   padding: 0;

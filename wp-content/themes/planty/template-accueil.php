@@ -13,7 +13,7 @@ include "variables-accueil.php";
     <div class="entry-content">
 
         <section class="c-hero" style="background-color:<?php echo( $hero_background_color ); ?>;">
-            <div class="o-wrapper-xl">
+            <div class="o-wrapper-md">
                 <div class="c-hero__title">
                     <?php echo( $hero_title ? $hero_title : the_title() ); ?>
                 </div>
@@ -69,7 +69,7 @@ include "variables-accueil.php";
                                 </div>
                             ' );
                             echo( '<div class="c-testimonials__list-texts">' );
-                                echo( '<p class="c-testimonials__list-texts__name">'.$testimonial["name"].'</p>' );
+                                echo( '<h3 class="c-testimonials__list-texts__name">'.$testimonial["name"].'</h3>' );
                                 echo( '<p class="c-testimonials__list-texts__text">'.$testimonial["texts"].'</p>' );
                             echo( '</div>' );
                         echo( '</li>' );

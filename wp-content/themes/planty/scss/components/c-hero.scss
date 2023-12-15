@@ -1,37 +1,52 @@
 .c-hero {
     padding: 100px 0;
 
+    &--bg-img {
+        padding-top: 180px;
+        background-size: 220px;
+        background-position: top 20% left 10%;
+        background-repeat: no-repeat;
+        .c-hero__title {
+            margin-bottom: 0;
+        }
+    }
+    
     &__title {
-        margin-bottom: 50px;
+        margin-bottom: 100px;
+        h1 {
+            margin-bottom: 25px;
+        }
     }
 
     &__images {
-        height: fit-content;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 0;
         &-img {
-            height: auto;
-            margin: 0 auto;
-            display: block;
+            width: auto;
+            height: 400px;
+            margin: 0;
             &:nth-child(1) {
-                width: 85%;
-                object-fit: contain;
-                position: relative;
-                z-index: 1;
+                width: auto;
+                height: 100%;
             }
             // Feuilles gauche
             &:nth-child(2) {
-                width: 350px;
                 position: absolute;
-                top: 50%;
+                bottom: 5%;
                 right: 50%;
-                z-index: 0;
+                z-index: -1;
             }
             // Feuilles droite
             &:nth-child(3) {
-                width: 350px;
                 position: absolute;
-                top: 50%;
+                bottom: 5%;
                 left: 50%;
-                z-index: 0;
+                z-index: -1;
             }
         }
     }

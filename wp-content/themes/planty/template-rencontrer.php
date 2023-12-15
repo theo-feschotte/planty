@@ -12,16 +12,38 @@ include "variables-rencontrer.php";
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
 
-        <section class="c-hero" style="background-color:<?php echo( $hero_background_color ); ?>;">
-            <div class="o-wrapper-xl">
+        <section class="c-hero <?php echo( $hero_image ? 'c-hero--bg-img' : '' ); ?>" style="background-image:url('<?php echo( $hero_image["url"] ); ?>'); background-color:<?php echo( $hero_background_color ); ?>;">
+            <div class="o-wrapper-md">
                 <div class="c-hero__title">
                     <?php echo( $hero_title ? $hero_title : the_title() ); ?>
                 </div>
-                <div class="c-hero__images">
-                    <?php foreach ($hero_images as $image) {
-                        echo( '<img class="c-hero__images-img" src="'.$image["image"]["url"].'" alt="'.$image["image"]["alt"].'">' );
-                    } ?>
+            </div>
+        </section>
+
+        <section class="c-teams" style="background-image:url('<?php echo( $team_background_image["url"] ); ?>'); background-color:<?php echo( $team_background_color ); ?>;">
+            <div class="o-wrapper-xl">
+                <div class="c-teams__title">
+                    <?php echo( $team_title ); ?>
                 </div>
+                <ul class="c-teams__list">
+                    <?php foreach ($team_list as $profil) {
+                        echo( '<li class="c-teams__list-item">' );
+                            echo( '<div class="c-teams__list-image">' );
+                                echo( '<img src="'.$profil["image"]["url"].'" alt="'.$profil["image"]["alt"].'"/>' );
+                            echo( '</div>' );
+                            echo( '<div class="c-teams__list-texts">' );
+                                echo( '<h4 class="c-teams__list-texts__name">'.$profil["name"].'</h4>' );
+                                echo( '<p class="c-teams__list-texts__occupation o-h4">'.$profil["occupation"].'</p>' );
+                            echo( '</div>' );
+                        echo( '</li>' );
+                    } ?>
+                </ul>
+            </div>
+        </section>
+
+        <section class="c-forms" style="background-image:url('<?php echo( $form_background_image["url"] ); ?>'); background-color:<?php echo( $form_background_color ); ?>;">
+            <div class="o-wrapper-sm">
+                <?php echo( $form_shortcode ); ?>
             </div>
         </section>
 
