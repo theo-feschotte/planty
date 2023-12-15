@@ -41,9 +41,16 @@ include "variables-rencontrer.php";
             </div>
         </section>
 
-        <section class="c-forms" style="background-image:url('<?php echo( $form_background_image["url"] ); ?>'); background-color:<?php echo( $form_background_color ); ?>;">
+        <section class="c-forms" style="background-color:<?php echo( $form_background_color ); ?>;">
             <div class="o-wrapper-sm">
-                <?php echo( $form_shortcode ); ?>
+                <div class="c-forms__title">
+                    <?php echo( $form_title ); ?>
+                </div>
+            </div>
+            <div class="o-wrapper-md">
+                <div class="c-forms__form-container" style="background-image:url('<?php echo( $form_background_image["url"] ); ?>');">
+                    <?php echo( $form_shortcode ); ?>
+                </div>
             </div>
         </section>
 

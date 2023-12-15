@@ -91,6 +91,9 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 	define( 'WP_DEBUG', false );
 }
 
+// Remove p tags from Contact Form 7
+define('WPCF7_AUTOP', false );
+
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 /* That's all, stop editing! Happy publishing. */
 

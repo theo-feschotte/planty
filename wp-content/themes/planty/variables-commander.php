@@ -29,5 +29,6 @@ $summary_list = [
 
 
 // Commander -- FORMULAIRE
-$form_shortcode = get_field( "commander__form_shortcode" );
+$form_title = get_field( "commander__form_title" );
+$form_shortcode = do_shortcode( get_field( "commander__form_shortcode" ) );
 $form_background_color = get_field( "commander__form_background_color" );

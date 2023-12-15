@@ -8,6 +8,7 @@
 @import "./components/c-flavours";
 @import "./components/c-testimonials";
 @import "./components/c-teams";
+@import "./components/c-summary";
 @import "./components/c-forms";
 
 @function rem($size) {
@@ -121,6 +122,11 @@ o-h4 {
     &:hover {
         background-color: var(--dark-pink);
     }
+}
+input[type="submit"].btn-link {
+    margin: auto;
+    padding: 20px 50px;
+    cursor: pointer;
 }
 
 .o-wrapper-xl {

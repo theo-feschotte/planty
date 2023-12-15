@@ -30,6 +30,7 @@ $team_list = [
 
 
 // Nous rencontrer -- FORMULAIRE
-$form_shortcode = get_field( "rencontrer__form_shortcode" );
+$form_title = get_field( "rencontrer__form_title" );
+$form_shortcode = do_shortcode( get_field( "rencontrer__form_shortcode" ) );
 $form_background_image = get_field( "rencontrer__form_background_image" );
 $form_background_color = get_field( "rencontrer__form_background_color" );
