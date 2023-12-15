@@ -1,0 +1,42 @@
+.c-testimonials {
+    padding: 100px 0;
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        gap: 30px;
+        &-item {
+            width: calc((100% - 30px) / 3);
+            display: flex;
+            gap: 20px;
+        }
+        &-image {
+            width: 127px;
+            height: 140px;
+            aspect-ratio: 127 / 140;
+            position: relative;
+            svg {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+            img {
+                width: 150%;
+                height: 150%;
+                object-fit: cover;
+                object-position: 60% center;
+            }
+        }
+        &-texts {
+            &__name {
+                margin-bottom: 10px;
+                font-size: var(--f-s-h3);
+                font-weight: var(--f-w-h3);
+                line-height: var(--f-lh-h3);
+            }
+        }
+    }
+}

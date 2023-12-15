@@ -56,7 +56,18 @@ include "variables-accueil.php";
                 <ul class="c-testimonials__list">
                     <?php foreach ($testimonials_list as $testimonial) {
                         echo( '<li class="c-testimonials__list-item">' );
-                            echo( '<img class="c-testimonials__list-image" src="'.$testimonial["image"]["url"].'" alt="'.$testimonial["image"]["alt"].'">' );
+                            echo( '
+                                <div class="c-testimonials__list-image">
+                                    <svg viewBox="0 0 127 140" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <clipPath id="p-shape">
+                                                <path d="M121,22.4c-3.8-7-9-12.5-15.7-16.4C98.7,2,91,0,82.3,0H0.4v139h44.6V94.1h37.3c8.6,0,16.2-2,22.8-5.9 c6.7-3.9,12-9.4,15.7-16.4c3.9-7.1,5.8-15.5,5.8-25.1C126.6,37.6,124.8,29.4,121,22.4z M77.8,58c-2.3,2.4-5.8,3.6-10.5,3.6H44.9 V32.9h22.4c3.2,0,5.9,0.5,7.9,1.6c2.2,1.1,3.7,2.7,4.6,4.8c1.1,2,1.6,4.6,1.6,7.9C81.5,52,80.2,55.6,77.8,58z"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <img style="clip-path:url(#p-shape)" src="'.$testimonial["image"]["url"].'" alt="'.$testimonial["image"]["alt"].'"/>
+                                </div>
+                            ' );
                             echo( '<div class="c-testimonials__list-texts">' );
                                 echo( '<p class="c-testimonials__list-texts__name">'.$testimonial["name"].'</p>' );
                                 echo( '<p class="c-testimonials__list-texts__text">'.$testimonial["texts"].'</p>' );
