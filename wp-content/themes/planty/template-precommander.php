@@ -20,8 +20,8 @@ include "variables-precommander.php";
             </div>
         </section>
 
-        <section class="c-forms" style="background-color:<?php echo( $form_background_color ); ?>;">
-            <div class="o-wrapper-sm">
+        <section class="c-forms c-forms--preorder" style="background-color:<?php echo( $form_background_color ); ?>;">
+            <div class="o-wrapper-xl">
                 <div class="c-forms__form-container">
                     <?php echo( $form_shortcode ); ?>
                 </div>

@@ -348,80 +348,6 @@ footer .menu-item a {
     background-position: bottom right 5%;
   }
 }
-.c-summary {
-  padding: 100px 0;
-}
-.c-summary__title {
-  margin-bottom: 50px;
-}
-.c-summary__list {
-  display: flex;
-  gap: 40px 30px;
-}
-.c-summary__list-item {
-  width: calc((100% - 90px) / 4);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
-}
-.c-summary__list-content {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.c-summary__list-content__name {
-  width: 100%;
-  height: 100%;
-  padding: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: var(--white);
-  font-size: var(--f-s-h4);
-  font-weight: var(--f-w-h2);
-  line-height: var(--f-lh-h4);
-  text-align: center;
-  text-transform: uppercase;
-  word-break: break-all;
-}
-.c-summary__list-content__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.c-summary__list-button {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.c-summary__list-button__label {
-  color: var(--white);
-  font-size: var(--f-s-base);
-  font-weight: var(--f-w-base);
-  line-height: var(--f-lh-base);
-  text-align: center;
-  display: none;
-}
-.c-summary__list-button__quantity {
-  width: 50px;
-  height: auto;
-  aspect-ratio: 1/1.25;
-  margin: 0 auto;
-  text-align: center;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  -moz-appearance: textfield;
-}
-.c-summary__list-button__quantity::-webkit-outer-spin-button, .c-summary__list-button__quantity::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
 .c-forms {
   padding: 150px 0 75px 0;
 }
@@ -445,13 +371,13 @@ footer .menu-item a {
   flex-direction: column;
   gap: 20px;
 }
-.c-forms__form-container .wpcf7-form-row {
+.c-forms__form-container .wpcf7-form__row {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.c-forms__form-container .wpcf7-form-row--btn-link {
+.c-forms__form-container .wpcf7-form__row--btn-link {
   width: fit-content;
   margin: 0 auto;
 }
@@ -462,6 +388,109 @@ footer .menu-item a {
   border: none;
   border-radius: 5px;
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.05);
+}
+.c-forms__form-container .wpcf7-form__section {
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  border-top: solid 1px var(--white);
+}
+.c-forms__form-container .wpcf7-form__section-title {
+  width: 100%;
+  color: var(--white);
+}
+.c-forms__form-container .wpcf7-form__section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.c-forms__form-container .wpcf7-form__section-column {
+  width: 50%;
+  padding: 0 0 0 50px;
+  border: none;
+  border-left: solid 1px var(--white);
+}
+.c-forms__form-container .wpcf7-form__section-column:first-child {
+  padding-left: 0;
+  padding-right: 50px;
+  border: none;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour {
+  width: calc((100% - 90px) / 4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-content {
+  position: relative;
+  background-color: var(--black);
+  overflow: hidden;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-content:hover .wpcf7-form__summary-flavour-image {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-name {
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--white);
+  font-size: var(--f-s-h4);
+  font-weight: var(--f-w-h2);
+  line-height: var(--f-lh-h4);
+  text-align: center;
+  text-transform: uppercase;
+  word-break: break-all;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-quantity label {
+  color: var(--white);
+  font-size: var(--f-s-base);
+  font-weight: var(--f-w-base);
+  line-height: var(--f-lh-base);
+  text-align: center;
+  display: none;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-quantity input {
+  width: 50px;
+  height: auto;
+  aspect-ratio: 1/1.25;
+  margin: 0 auto;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -moz-appearance: textfield;
+}
+.c-forms__form-container .wpcf7-form__summary-flavour-quantity input::-webkit-outer-spin-button, .c-forms__form-container .wpcf7-form__summary-flavour-quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.c-forms--preorder {
+  padding-top: 0;
+}
+.c-forms--preorder .c-forms__form-container .wpcf7 {
+  width: 100%;
+}
+.c-forms--preorder .c-forms__form-container .wpcf7-form label {
+  color: var(--white);
 }
 
 :root {
