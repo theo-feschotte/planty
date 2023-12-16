@@ -12,9 +12,6 @@
         .wpcf7 {
             width: 380px;
             margin: 0 auto;
-            &-not-valid-tip {
-                margin-top: 10px;
-            }
             &-form {
                 display: flex;
                 flex-direction: column;
@@ -152,6 +149,21 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.wpcf7 {
+    form {
+        .wpcf7-not-valid-tip {
+            margin-top: 10px;
+        }
+        .wpcf7-response-output {
+            width: fit-content;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--white);
+            background-color: inherit;
         }
     }
 }
