@@ -22,6 +22,9 @@
   align-items: baseline;
   list-style: none;
 }
+#header .menu-item--hidden {
+  display: none;
+}
 #header .menu-item.current-menu-item a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
