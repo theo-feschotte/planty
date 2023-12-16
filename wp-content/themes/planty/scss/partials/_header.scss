@@ -1,5 +1,5 @@
 #header {
-    padding: 30px 37px;
+    padding: 0 0 0 35px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -15,13 +15,21 @@
     }
     .menu {
         &-list {
+            margin: 0;
+            padding: 0;
             display: flex;
-            gap: 60px;
+            justify-content: flex-end;
+            align-items: baseline;
+            list-style: none;
         }
         &-item {
             a {
-                color: var(--black);
+                padding: 30px;
+                display: block;
                 text-decoration: none;
+                &:hover {
+                    color: var(--active-pink);
+                }
             }
         }
     }

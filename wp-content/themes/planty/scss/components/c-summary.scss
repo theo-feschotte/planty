@@ -6,37 +6,71 @@
     }
 
     &__list {
-        padding: 0 150px;
         display: flex;
-        flex-wrap: wrap;
         gap: 40px 30px;
         &-item {
             width: calc((100% - 90px) / 4);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             position: relative;
         }
-        &-name {
+        &-content {
             width: 100%;
             height: 100%;
-            padding: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: var(--white);
-            font-size: var(--f-s-h4);
-            font-weight: var(--f-w-h2);
-            line-height: var(--f-lh-h4);
-            text-align: center;
-            text-transform: uppercase;
-            word-break: break-all;
+            position: relative;
+            &__name {
+                width: 100%;
+                height: 100%;
+                padding: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: var(--white);
+                font-size: var(--f-s-h4);
+                font-weight: var(--f-w-h2);
+                line-height: var(--f-lh-h4);
+                text-align: center;
+                text-transform: uppercase;
+                word-break: break-all;
+            }
+            &__image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
         }
-        &-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        &-button {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            &__label {
+                color: var(--white);
+                font-size: var(--f-s-base);
+                font-weight: var(--f-w-base);
+                line-height: var(--f-lh-base);
+                text-align: center;
+                display: none;
+            }
+            &__quantity {
+                width: 50px;
+                height: auto;
+                aspect-ratio: 1 / 1.25;
+                margin: 0 auto;
+                text-align: center;
+                border: none;
+                border-radius: 0;
+                outline: none;
+                -moz-appearance: textfield;
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                }
+            }
         }
     }
 }

@@ -64,6 +64,7 @@ body,
     main#content {
         overflow: hidden;
     }
+    color: var(--black);
     font-family: var(--f-f-base);
     font-size: var(--f-s-base);
     font-weight: var(--f-w-base);
@@ -126,11 +127,30 @@ o-h4 {
     &:hover {
         background-color: var(--active-pink);
     }
+    &--menu {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        a {
+            padding: 30px 60px !important;
+            color: var(--white);
+            &:hover {
+                color: inherit !important;
+            }
+        }
+    }
 }
 input[type="submit"].btn-link {
     margin: auto;
     padding: 20px 50px;
     cursor: pointer;
+}
+input:not([type='submit']),
+textarea {
+    &:focus,
+    &:active {
+        outline: solid 2px var(--active-pink);
+    }
 }
 
 .o-wrapper-xl {

@@ -21,16 +21,21 @@ include "variables-commander.php";
         </section>
 
         <section class="c-summary" style="background-color:<?php echo( $summary_background_color ); ?>;">
-            <div class="o-wrapper-xl">
+            <div class="o-wrapper-md">
                 <div class="c-summary__title">
                     <?php echo( $summary_title ); ?>
                 </div>
                 <ul class="c-summary__list">
                     <?php foreach ($summary_list as $flavour) {
                         echo( '<li class="c-summary__list-item">' );
-                            echo( '<p class="c-summary__list-name">'.$flavour["name"].'</p>' );
-                            echo( '<img class="c-summary__list-image" src="'.$flavour["image"]["url"].'" alt="'.$flavour["image"]["alt"].'">' );
-                            echo( '<input class="c-summary__list-button" type="numer" value="0"></input>' );
+                            echo( '<div class="c-summary__list-content">' );
+                                echo( '<p class="c-summary__list-content__name">'.$flavour["name"].'</p>' );
+                                echo( '<img class="c-summary__list-content__image" src="'.$flavour["image"]["url"].'" alt="'.$flavour["image"]["alt"].'">' );
+                            echo( '</div>' );
+                            echo( '<div class="c-summary__list-button">' );
+                                echo( '<label class="c-summary__list-button__label" for="'.strtolower($flavour["name"]).'-flavour-quantity">Quantité de saveur '.$flavour["name"].'</label>' );
+                                echo( '<input class="c-summary__list-button__quantity" value="0" min="0" max="100" type="number" name="'.strtolower($flavour["name"]).'-flavour-quantity"/>' );
+                            echo( '</div>' );
                         echo( '</li>' );
                     } ?>
                 </ul>
