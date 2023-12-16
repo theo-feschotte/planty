@@ -54,10 +54,12 @@ include "variables-accueil.php";
                     <?php echo( $testimonials_title ); ?>
                 </div>
                 <ul class="c-testimonials__list">
-                    <?php foreach ($testimonials_list as $testimonial) {
+                    <?php $delay = 0; ?>
+                    <?php foreach ($testimonials_list as $key=>$testimonial) {
+                        $delay = ($key / 7);
                         echo( '<li class="c-testimonials__list-item">' );
                             echo( '
-                                <div class="c-testimonials__list-image">
+                                <div class="c-testimonials__list-image" style="animation-delay:calc(0.5s + '.$delay.'s)">
                                     <svg viewBox="0 0 127 140" xmlns="http://www.w3.org/2000/svg">
                                         <defs>
                                             <clipPath id="p-shape">

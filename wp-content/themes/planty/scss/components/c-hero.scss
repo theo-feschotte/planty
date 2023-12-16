@@ -1,11 +1,29 @@
 .c-hero {
     padding: 100px 0;
-
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -15%;
+        right: -15%;
+        bottom: -5%;
+        z-index: -1;
+        border: none;
+        border-bottom: inset 10px rgba(0, 0, 0, 0.05);
+        border-radius: 25%;
+        background-color: inherit;
+    }
+    
     &--bg-img {
         padding-top: 180px;
         background-size: 220px;
-        background-position: top 20% left 10%;
         background-repeat: no-repeat;
+        background-position: top -10% left -20%;
+        animation: heroBackgroundImageFadeIn forwards 0.5s ease;
+        &::before {
+            border: none;
+        }
         .c-hero__title {
             margin-bottom: 0;
         }
@@ -30,9 +48,15 @@
             width: auto;
             height: 400px;
             margin: 0;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease;
+            animation-duration: 0.25s;
+            // Boisson
             &:nth-child(1) {
                 width: auto;
                 height: 100%;
+                animation-name: drinkFadeIn;
             }
             // Feuilles gauche
             &:nth-child(2) {
@@ -40,6 +64,8 @@
                 bottom: 5%;
                 right: 50%;
                 z-index: -1;
+                animation-name: leftLeafsFadeIn;
+                animation-delay: 0.25s;
             }
             // Feuilles droite
             &:nth-child(3) {
@@ -47,7 +73,49 @@
                 bottom: 5%;
                 left: 50%;
                 z-index: -1;
+                animation-name: rightLeafsFadeIn;
+                animation-delay: 0.35s;
             }
         }
+    }
+}
+
+@keyframes drinkFadeIn {
+    from {
+        transform: translate3d(0, 25%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes leftLeafsFadeIn {
+    from {
+        transform: rotate(45deg) translate3d(50%, 0, 0);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes rightLeafsFadeIn {
+    from {
+        transform: rotate(-45deg) translate3d(-50%, 0, 0);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes heroBackgroundImageFadeIn {
+    from {
+        background-position: top -10% left -20%;
+    }
+    to {
+        background-position: top 20% left 10%;
     }
 }

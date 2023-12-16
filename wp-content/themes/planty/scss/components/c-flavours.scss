@@ -12,7 +12,17 @@
         gap: 40px 30px;
         &-item {
             width: calc((100% - 30px) / 2);
+            height: 300px;
             position: relative;
+            z-index: 0;
+            overflow: hidden;
+            background-color: var(--black);
+            &:hover {
+                .c-flavours__list-image {
+                    transform: scale(1.1);
+                    opacity: 0.85;
+                }
+            }
         }
         &-name {
             width: 100%;
@@ -37,6 +47,9 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            position: absolute;
+            z-index: -1;
+            transition: 0.5s ease;
         }
     }
 }

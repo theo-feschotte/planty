@@ -40,12 +40,30 @@ footer .menu-item a {
 
 .c-hero {
   padding: 100px 0;
+  position: relative;
+}
+.c-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -15%;
+  right: -15%;
+  bottom: -5%;
+  z-index: -1;
+  border: none;
+  border-bottom: inset 10px rgba(0, 0, 0, 0.05);
+  border-radius: 25%;
+  background-color: inherit;
 }
 .c-hero--bg-img {
   padding-top: 180px;
   background-size: 220px;
-  background-position: top 20% left 10%;
   background-repeat: no-repeat;
+  background-position: top -10% left -20%;
+  animation: heroBackgroundImageFadeIn forwards 0.5s ease;
+}
+.c-hero--bg-img::before {
+  border: none;
 }
 .c-hero--bg-img .c-hero__title {
   margin-bottom: 0;
@@ -69,24 +87,71 @@ footer .menu-item a {
   width: auto;
   height: 400px;
   margin: 0;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-duration: 0.25s;
 }
 .c-hero__images-img:nth-child(1) {
   width: auto;
   height: 100%;
+  animation-name: drinkFadeIn;
 }
 .c-hero__images-img:nth-child(2) {
   position: absolute;
   bottom: 5%;
   right: 50%;
   z-index: -1;
+  animation-name: leftLeafsFadeIn;
+  animation-delay: 0.25s;
 }
 .c-hero__images-img:nth-child(3) {
   position: absolute;
   bottom: 5%;
   left: 50%;
   z-index: -1;
+  animation-name: rightLeafsFadeIn;
+  animation-delay: 0.35s;
 }
 
+@keyframes drinkFadeIn {
+  from {
+    transform: translate3d(0, 25%, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes leftLeafsFadeIn {
+  from {
+    transform: rotate(45deg) translate3d(50%, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rightLeafsFadeIn {
+  from {
+    transform: rotate(-45deg) translate3d(-50%, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes heroBackgroundImageFadeIn {
+  from {
+    background-position: top -10% left -20%;
+  }
+  to {
+    background-position: top 20% left 10%;
+  }
+}
 .c-texts {
   padding: 150px 0 75px 0;
 }
@@ -113,7 +178,15 @@ footer .menu-item a {
 }
 .c-flavours__list-item {
   width: calc((100% - 30px) / 2);
+  height: 300px;
   position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--black);
+}
+.c-flavours__list-item:hover .c-flavours__list-image {
+  transform: scale(1.1);
+  opacity: 0.85;
 }
 .c-flavours__list-name {
   width: 100%;
@@ -138,6 +211,9 @@ footer .menu-item a {
   height: 100%;
   object-fit: cover;
   display: block;
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s ease;
 }
 
 .c-testimonials {
@@ -160,6 +236,8 @@ footer .menu-item a {
   height: 140px;
   aspect-ratio: 127/140;
   position: relative;
+  opacity: 0;
+  animation: pShapeFadeIn forwards 1s ease;
 }
 .c-testimonials__list-image svg {
   width: 100%;
@@ -177,11 +255,22 @@ footer .menu-item a {
   color: var(--green);
 }
 
+@keyframes pShapeFadeIn {
+  from {
+    transform: translate3d(0, -140px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
 .c-teams {
   padding: 100px 0;
   background-size: 200px;
-  background-position: bottom right 5%;
   background-repeat: no-repeat;
+  background-position: bottom -75% right -25%;
+  animation: teamBackgroundImageFadeIn forwards 1s 0.5s ease;
 }
 .c-teams__title {
   margin-bottom: 50px;
@@ -204,6 +293,8 @@ footer .menu-item a {
   aspect-ratio: 1/1;
   border-radius: 100%;
   overflow: hidden;
+  opacity: 0;
+  animation: teamImagesFadeIn forwards 1s ease;
 }
 .c-teams__list-image img {
   width: 100%;
@@ -219,6 +310,24 @@ footer .menu-item a {
   margin-bottom: 10px;
 }
 
+@keyframes teamImagesFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes teamBackgroundImageFadeIn {
+  from {
+    background-position: bottom -75% right -25%;
+  }
+  to {
+    background-position: bottom right 5%;
+  }
+}
 .c-summary {
   padding: 100px 0;
 }
@@ -289,6 +398,10 @@ footer .menu-item a {
   flex-direction: column;
   gap: 10px;
 }
+.c-forms__form-container .wpcf7-form-row input:not([type=submit]):focus,
+.c-forms__form-container .wpcf7-form-row textarea:focus {
+  outline: solid 2px var(--active-pink);
+}
 .c-forms__form-container .wpcf7-form-row--btn-link {
   width: fit-content;
   margin: 0 auto;
@@ -304,6 +417,7 @@ footer .menu-item a {
 
 :root {
   --dark-pink: #D2776a;
+  --active-pink: #C02E44;
   --light-pink: #e0b9b4;
   --green: #3b8e46;
   --bg-color: #ece2da;
@@ -345,6 +459,10 @@ body,
   font-size: var(--f-s-base);
   font-weight: var(--f-w-base);
   line-height: var(--f-lh-base);
+}
+body main#content,
+* main#content {
+  overflow: hidden;
 }
 body strong,
 * strong {
@@ -403,7 +521,7 @@ o-h4 {
   background-color: var(--light-pink);
 }
 .btn-link:hover {
-  background-color: var(--dark-pink);
+  background-color: var(--active-pink);
 }
 
 input[type=submit].btn-link {

@@ -26,9 +26,11 @@ include "variables-rencontrer.php";
                     <?php echo( $team_title ); ?>
                 </div>
                 <ul class="c-teams__list">
-                    <?php foreach ($team_list as $profil) {
+                    <?php $delay = 0; ?>
+                    <?php foreach ($team_list as $key=>$profil) {
+                        $delay = ($key / 5);
                         echo( '<li class="c-teams__list-item">' );
-                            echo( '<div class="c-teams__list-image">' );
+                            echo( '<div class="c-teams__list-image" style="animation-delay:calc('.$delay.'s)">' );
                                 echo( '<img src="'.$profil["image"]["url"].'" alt="'.$profil["image"]["alt"].'"/>' );
                             echo( '</div>' );
                             echo( '<div class="c-teams__list-texts">' );

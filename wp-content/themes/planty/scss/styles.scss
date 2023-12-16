@@ -17,6 +17,7 @@
 
 :root {
     --dark-pink: #D2776a;
+    --active-pink: #C02E44;
     --light-pink: #e0b9b4;
     --green: #3b8e46;
     --bg-color: #ece2da;
@@ -60,6 +61,9 @@
 
 body,
 * {
+    main#content {
+        overflow: hidden;
+    }
     font-family: var(--f-f-base);
     font-size: var(--f-s-base);
     font-weight: var(--f-w-base);
@@ -120,7 +124,7 @@ o-h4 {
     border-radius: 5px;
     background-color: var(--light-pink);
     &:hover {
-        background-color: var(--dark-pink);
+        background-color: var(--active-pink);
     }
 }
 input[type="submit"].btn-link {
