@@ -23,6 +23,20 @@
             list-style: none;
         }
         &-item {
+            &.current-menu-item {
+                a {
+                    text-decoration: underline;
+                    text-decoration-thickness: 2px;
+                    text-underline-offset: 3px;
+                    text-decoration-color: var(--active-pink);
+                }
+                &.btn-link--menu {
+                    background-color: var(--active-pink);
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
             a {
                 padding: 30px;
                 display: block;

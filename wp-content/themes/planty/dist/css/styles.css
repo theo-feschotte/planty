@@ -22,6 +22,18 @@
   align-items: baseline;
   list-style: none;
 }
+#header .menu-item.current-menu-item a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--active-pink);
+}
+#header .menu-item.current-menu-item.btn-link--menu {
+  background-color: var(--active-pink);
+}
+#header .menu-item.current-menu-item.btn-link--menu a {
+  text-decoration: none;
+}
 #header .menu-item a {
   padding: 30px;
   display: block;
