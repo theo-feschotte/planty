@@ -20,7 +20,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: baseline;
-  list-style: none;
 }
 #header .menu-item--hidden {
   display: none;
@@ -46,17 +45,23 @@
   color: var(--active-pink);
 }
 
-footer {
-  padding: 20px;
-  background-color: var(--white);
+.c-footer__bg-img {
+  width: 100%;
+  height: 125px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: inherit;
 }
-footer .menu-list {
+.c-footer .menu-list {
+  margin: 0;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: baseline;
   gap: 40px;
 }
-footer .menu-item a {
+.c-footer .menu-item a {
   color: var(--black);
   text-decoration: none;
 }
