@@ -25,10 +25,37 @@ function populateFormsTitle(formTitleContainer, formTitleContent) {
     formTitleContent.remove();
 };
 
+
+// BackgroundColor forms-response-output
+function formInvalidResponseOutput() {
+    let IntervalFormsResponseOutput = setInterval(() => {
+        let formresponseOutput = document.querySelector(".wpcf7 form.invalid .wpcf7-response-output");
+        if (formresponseOutput) {
+            clearInterval(IntervalFormsResponseOutput);
+            populateFormsStyles(formresponseOutput);
+        };
+    }, 100 );
+};
+function formSentResponseOutput() {
+    let IntervalFormsResponseOutput = setInterval(() => {
+        let formresponseOutput = document.querySelector(".wpcf7 form.sent .wpcf7-response-output");
+        if (formresponseOutput) {
+            clearInterval(IntervalFormsResponseOutput);
+            populateFormsStyles(formresponseOutput);
+        };
+    }, 100 );
+};
+function populateFormsStyles(formresponseOutput) {
+    var formBorderColor = window.getComputedStyle(formresponseOutput).getPropertyValue('border-color');
+    formresponseOutput.style.backgroundColor = formBorderColor;
+};
+
 window.addEventListener("load", () => {
 
     populateFormSummaryTitle();
     populateFormInformationsTitle();
     populateFormAddressTitle();
+    formInvalidResponseOutput();
+    formSentResponseOutput();
 
 });
