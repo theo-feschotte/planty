@@ -1,22 +1,28 @@
+// Populate forms title
 function populateFormSummaryTitle() {
-    let formSummaryTitle = document.querySelector(".wpcf7-form__summary-title");
-    if (!formSummaryTitle) return;
-    formSummaryTitle.innerHTML = document.querySelector("div.form_summary_title").innerHTML;
-    document.querySelector("div.form_summary_title").remove();
+    let formTitleContainer = document.querySelector(".wpcf7-form__summary-title");
+    if (!formTitleContainer) return;
+    let formTitleContent = document.querySelector("div.form_summary_title");
+    if (!formTitleContent) return;
+    populateFormsTitle(formTitleContainer, formTitleContent);
 };
-
 function populateFormInformationsTitle() {
-    let formInformationsTitle = document.querySelector(".wpcf7-form__informations-title");
-    if (!formInformationsTitle) return;
-    formInformationsTitle.innerHTML = document.querySelector("div.form_informations_title").innerHTML;
-    document.querySelector("div.form_informations_title").remove();
+    let formTitleContainer = document.querySelector(".wpcf7-form__informations-title");
+    if (!formTitleContainer) return;
+    let formTitleContent = document.querySelector("div.form_informations_title");
+    if (!formTitleContent) return;
+    populateFormsTitle(formTitleContainer, formTitleContent);
 };
-
 function populateFormAddressTitle() {
-    let formAddressTitle = document.querySelector(".wpcf7-form__address-title");
-    if (!formAddressTitle) return;
-    formAddressTitle.innerHTML = document.querySelector("div.form_address_title").innerHTML;
-    document.querySelector("div.form_address_title").remove();
+    let formTitleContainer = document.querySelector(".wpcf7-form__address-title");
+    if (!formTitleContainer) return;
+    let formTitleContent = document.querySelector("div.form_address_title");
+    if (!formTitleContent) return;
+    populateFormsTitle(formTitleContainer, formTitleContent);
+};
+function populateFormsTitle(formTitleContainer, formTitleContent) {
+    formTitleContainer.innerHTML = formTitleContent.innerHTML;
+    formTitleContent.remove();
 };
 
 window.addEventListener("load", () => {
