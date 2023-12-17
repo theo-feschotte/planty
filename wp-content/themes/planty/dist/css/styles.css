@@ -662,4 +662,8 @@ textarea:active {
   display: block;
 }
 
+.o-hidden {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

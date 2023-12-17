@@ -31,6 +31,12 @@ include "variables-precommander.php";
     </div>
 </article>
 
+<div class="o-hidden">
+    <div class="form_summary_title"><?php echo( $form_summary_title ); ?></div>
+    <div class="form_informations_title"><?php echo( $form_informations_title ); ?></div>
+    <div class="form_address_title"><?php echo( $form_address_title ); ?></div>
+</div>
+
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

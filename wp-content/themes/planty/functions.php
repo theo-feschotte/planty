@@ -5,8 +5,12 @@ function wpm_enqueue_styles() {
     // Parent theme stylesheet
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
-    // Components stylesheet - SASS compiled
-    wp_enqueue_style( 'sass-style', get_stylesheet_directory_uri() . '/dist/css/styles.css' );
+    // SASS (compiled)
+    wp_enqueue_style( 'styles-site', get_stylesheet_directory_uri() . '/dist/css/styles.css' );
+    
+    // JavaScript
+    wp_enqueue_script( 'scripts-site', get_stylesheet_directory_uri() . '/dist/js/scripts.js' );
+
 }
 
 // Only display 'Admin' link in the menu for logged_in users
