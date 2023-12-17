@@ -662,6 +662,10 @@ textarea:active {
   display: block;
 }
 
+.no-mb {
+  margin-bottom: 0;
+}
+
 .o-hidden {
   display: none;
 }

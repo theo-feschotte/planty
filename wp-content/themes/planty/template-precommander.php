@@ -14,7 +14,7 @@ include "variables-precommander.php";
 
         <section class="c-hero" style="background-color:<?php echo( $hero_background_color ); ?>;">
             <div class="o-wrapper-md">
-                <div class="c-hero__title">
+                <div class="c-hero__title no-mb">
                     <?php echo( $hero_title ? $hero_title : the_title() ); ?>
                 </div>
             </div>
