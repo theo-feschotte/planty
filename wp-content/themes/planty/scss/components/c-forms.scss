@@ -1,17 +1,26 @@
 .c-forms {
-    padding: 150px 0 75px 0;
+    padding: 100px 50px;
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        padding: 150px 0 75px 0;
+    }
     
     &__title {
         margin-bottom: 50px;
     }
     
     &__form-container {
-        background-size: 150px;
-        background-position: bottom 15% left 20%;
-        background-repeat: no-repeat;
+        background-size: 0;
+        @media screen and (min-width:426px) and (max-width:1024px) {
+            background-size: 150px;
+            background-position: bottom 15% left 20%;
+            background-repeat: no-repeat;
+        }
         .wpcf7 {
-            width: 380px;
+            width: 100%;
             margin: 0 auto;
+            @media screen and (min-width:426px) and (max-width:1024px) {
+                width: 380px;
+            }
             &-form {
                 display: flex;
                 flex-direction: column;
@@ -39,6 +48,7 @@
                     padding: 50px 0;
                     display: flex;
                     flex-wrap: wrap;
+                    gap: 50px 0;
                     border: none;
                     border-top: solid 1px var(--white);
                     &-title {
@@ -51,23 +61,29 @@
                         gap: 30px;
                     }
                     &-column {
-                        width: calc(100% / 2);
-                        padding: 0 0 0 50px;
-                        border: none;
-                        border-left: solid 1px var(--white);
+                        width: 100%;
+                        @media screen and (min-width:426px) and (max-width:1024px) {
+                            width: calc(100% / 2);
+                            padding: 0 0 0 50px;
+                            border-left: solid 1px var(--white);
+                        }
                         &:first-child {
-                            padding-left: 0;
-                            padding-right: 50px;
-                            border: none;
+                            @media screen and (min-width:426px) and (max-width:1024px) {
+                                padding-left: 0;
+                                padding-right: 50px;
+                            }
                         }
                     }
                 }
                 &__summary {
                     &-flavour {
-                        width: calc((100% - 90px) / 4);
+                        width: 100%;
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
+                        @media screen and (min-width:426px) and (max-width:1024px) {
+                            width: calc((100% - 90px) / 4);
+                        }
                         &-content {
                             position: relative;
                             background-color: var(--black);
@@ -117,8 +133,8 @@
                                 display: none;
                             }
                             input {
-                                width: 50px;
-                                height: auto;
+                                width: 100%;
+                                height: 50px;
                                 aspect-ratio: 1 / 1.25;
                                 margin: 0 auto;
                                 text-align: center;
@@ -129,6 +145,10 @@
                                 &::-webkit-outer-spin-button,
                                 &::-webkit-inner-spin-button {
                                     -webkit-appearance: none;
+                                }
+                                @media screen and (min-width:426px) and (max-width:1024px) {
+                                    width: 50px;
+                                    height: auto;
                                 }
                             }
                         }
@@ -142,7 +162,6 @@
         padding-top: 0;
         .c-forms__form-container {
             .wpcf7 {
-                width: 100%;
                 &-form {
                     label {
                         color: var(--white);

@@ -1,9 +1,13 @@
 .c-teams {
-    padding: 100px 0;
-    background-size: 200px;
+    padding: 100px 50px;
+    background-size: 100px;
     background-repeat: no-repeat;
     background-position: bottom -75% right -25%;
     animation: teamBackgroundImageFadeIn forwards 1s 0.5s ease;
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        padding: 100px 0;
+        background-size: 200px;
+    }
 
     &__title {
         margin-bottom: 50px;
@@ -11,8 +15,15 @@
 
     &__list {
         display: flex;
-        justify-content: center;
-        gap: 160px;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        @media screen and (min-width:426px) and (max-width:1024px) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 160px;
+        }
         &-item {
             width: fit-content;
             display: flex;

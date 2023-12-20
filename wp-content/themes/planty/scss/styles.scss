@@ -70,9 +70,12 @@ body,
     line-height: var(--f-lh-base);
     strong {
         font-family: var(--f-f-base-strong);
-        font-size: var(--f-s-base-strong);
+        font-size: 18px;
         font-weight: var(--f-w-base-strong);
         line-height: var(--f-lh-base-strong);
+        @media screen and (min-width:426px) and (max-width:1024px) {
+            font-size: var(--f-s-base-strong);
+        }
     }
 }
 
@@ -82,32 +85,44 @@ body {
 
 h1,
 o-h1 {
-    font-size: var(--f-s-h1);
+    font-size: 28px;
     font-weight: var(--f-w-h1);
     line-height: var(--f-lh-h1);
     text-transform: uppercase;
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        font-size: var(--f-s-h1);
+    }
 }
 
 h2,
 o-h2 {
-    font-size: var(--f-s-h2);
+    font-size: 20px;
     font-weight: var(--f-w-h2);
     line-height: var(--f-lh-h2);
     text-transform: uppercase;
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        font-size: var(--f-s-h2);
+    }
 }
 
 h3,
 o-h3 {
-    font-size: var(--f-s-h3);
+    font-size: 20px;
     font-weight: var(--f-w-h3);
     line-height: var(--f-lh-h3);
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        font-size: var(--f-s-h3);
+    }
 }
 
 h4,
 o-h4 {
-    font-size: var(--f-s-h4);
+    font-size: 18px;
     font-weight: var(--f-w-h4);
     line-height: var(--f-lh-h4);
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        font-size: var(--f-s-h4);
+    }
 }
 
 .btn-link {
@@ -152,28 +167,34 @@ textarea {
     }
 }
 
-.o-wrapper-xl {
-    width: var(--wrapper-xl);
-    max-width: var(--wrapper-max);
+.o-wrapper-sm {
     margin: 0 auto;
     padding: 0;
     display: block;
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        width: var(--wrapper-sm);
+        max-width: var(--wrapper-max);
+    }
 }
 
 .o-wrapper-md {
-    width: var(--wrapper-md);
-    max-width: var(--wrapper-max);
     margin: 0 auto;
     padding: 0;
     display: block;
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        width: var(--wrapper-md);
+        max-width: var(--wrapper-max);
+    }
 }
 
-.o-wrapper-sm {
-    width: var(--wrapper-sm);
-    max-width: var(--wrapper-max);
+.o-wrapper-xl {
     margin: 0 auto;
     padding: 0;
     display: block;
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        width: var(--wrapper-xl);
+        max-width: var(--wrapper-max);
+    }
 }
 
 .no-mb {
@@ -183,3 +204,7 @@ textarea {
 .o-hidden {
     display: none;
 }
+
+// @media screen and (min-width:1025px) {
+//     background-color: blue !important;
+// }
