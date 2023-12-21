@@ -1,9 +1,9 @@
 .c-testimonials {
     padding: 100px 50px;
     @media screen and (min-width:426px) and (max-width:1024px) {
-        padding: 100px 0;
+        padding: 100px 50px;
     }
-
+    
     &__title {
         margin-bottom: 50px;
     }
@@ -15,6 +15,11 @@
         gap: 100px 30px;
         @media screen and (min-width:426px) and (max-width:1024px) {
             flex-direction: row;
+            justify-content: center;
+        }
+        @media screen and (min-width:1025px) {
+            flex-direction: row;
+            gap: 50px 30px;
         }
         &-item {
             width: 100%;
@@ -23,7 +28,12 @@
             align-items: center;
             gap: 20px;
             @media screen and (min-width:426px) and (max-width:1024px) {
-                width: calc((100% - 30px) / 3);
+                width: calc((100% - 30px) / 2);
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            @media screen and (min-width:1025px) {
+                width: calc((100% - 60px) / 3);
                 flex-direction: row;
                 align-items: flex-start;
             }
@@ -50,6 +60,11 @@
         &-texts {
             text-align: center;
             @media screen and (min-width:426px) and (max-width:1024px) {
+                margin-top: 20px;
+                text-align: left;
+            }
+            @media screen and (min-width:1025px) {
+                margin-top: 20px;
                 text-align: left;
             }
             &__name {

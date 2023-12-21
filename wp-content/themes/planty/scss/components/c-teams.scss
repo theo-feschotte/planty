@@ -22,7 +22,12 @@
             flex-direction: row;
             justify-content: center;
             align-items: flex-start;
-            gap: 160px;
+            gap: 80px;
+        }
+        @media screen and (min-width:1025px) {
+            flex-direction: row;
+            justify-content: center;
+            gap: 120px;
         }
         &-item {
             width: fit-content;

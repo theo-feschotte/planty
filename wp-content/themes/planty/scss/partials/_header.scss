@@ -1,12 +1,24 @@
 #header {
-    padding: 0 0 0 35px;
+    padding: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     background-color: var(--white);
+    @media screen and (min-width:426px) and (max-width:1024px) {
+        gap: 60px;
+    }
+    @media screen and (min-width:1025px) {
+        padding: 0;
+        flex-direction: row;
+    }
     .custom-logo-link {
-        width: 201px;
+        width: 200px;
+        height: auto;
         display: block;
+        @media screen and (min-width:1025px) {
+            margin-left: 30px;
+        }
         .custom-logo {
             width: 100%;
             height: 100%;
@@ -14,12 +26,22 @@
         }
     }
     .menu {
+        display: none;
+        @media screen and (min-width:426px) and (max-width:1024px) {
+            display: initial;
+        }
+        @media screen and (min-width:1025px) {
+            display: initial;
+        }
         &-list {
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: flex-end;
             align-items: baseline;
+            @media screen and (min-width:426px) and (max-width:1024px) {
+                justify-content: center;
+            }
         }
         &-item {
             &--hidden {
@@ -40,9 +62,14 @@
                 }
             }
             a {
-                padding: 30px;
                 display: block;
                 text-decoration: none;
+                @media screen and (min-width:426px) and (max-width:1024px) {
+                    padding: 15px;
+                }
+                @media screen and (min-width:1025px) {
+                    padding: 30px;
+                }
                 &:hover {
                     color: var(--active-pink);
                 }

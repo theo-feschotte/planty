@@ -3,6 +3,9 @@
     position: relative;
     @media screen and (min-width:426px) and (max-width:1024px) {
         padding: 100px 0;
+    }
+    @media screen and (min-width:1025px) {
+        padding: 100px 0;
         &::before {
             content: "";
             position: absolute;
@@ -23,10 +26,12 @@
         background-size: 220px;
         background-repeat: no-repeat;
         background-position: top 10% center;
-        animation: heroBackgroundImageFadeIn forwards 0.5s ease;
         @media screen and (min-width:426px) and (max-width:1024px) {
+            padding-top: 280px;
+        }
+        @media screen and (min-width:1025px) {
             padding-top: 180px;
-            background-position: top -10% left -20%;
+            animation: heroBackgroundImageFadeIn forwards 0.5s ease;
         }
         &::before {
             border: none;
@@ -38,6 +43,13 @@
     
     &__title {
         margin-bottom: 100px;
+        @media screen and (min-width:426px) and (max-width:1024px) {
+            width: 75%;
+            margin: 0 auto 50px auto;
+        }
+        @media screen and (min-width:1025px) {
+            margin: 0 auto 100px auto;
+        }
         h1 {
             margin-bottom: 25px;
         }
@@ -52,6 +64,9 @@
         position: relative;
         z-index: 0;
         @media screen and (min-width:426px) and (max-width:1024px) {
+            height: 400px;
+        }
+        @media screen and (min-width:1025px) {
             height: 500px;
         }
         &-img {
@@ -63,6 +78,9 @@
             animation-timing-function: ease;
             animation-duration: 0.25s;
             @media screen and (min-width:426px) and (max-width:1024px) {
+                height: 300px;
+            }
+            @media screen and (min-width:1025px) {
                 height: 400px;
             }
             // Boisson
@@ -127,14 +145,14 @@
 @keyframes heroBackgroundImageFadeIn {
     from {
         background-position: top -10% left -20%;
-        @media screen and (min-width:426px) and (max-width:1024px) {
-            background-position: top -10% left -20%;
-        }
+        // @media screen and (min-width:426px) and (max-width:1024px) {
+        //     background-position: top -10% left -20%;
+        // }
     }
     to {
-        background-position: top 10% center;
-        @media screen and (min-width:426px) and (max-width:1024px) {
-            background-position: top 20% left 10%;
-        }
+        background-position: top 10% left 10%;
+        // @media screen and (min-width:426px) and (max-width:1024px) {
+        //     background-position: top 20% left 10%;
+        // }
     }
 }
