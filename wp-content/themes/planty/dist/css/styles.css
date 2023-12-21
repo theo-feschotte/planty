@@ -61,6 +61,7 @@
   display: none;
 }
 #header .menu-item.current-menu-item a {
+  font-weight: var(--f-w-h4);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
