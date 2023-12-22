@@ -12,7 +12,7 @@ include "variables-precommander.php";
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
 
-        <section class="c-hero" style="background-color:<?php echo( $hero_background_color ); ?>;">
+        <section class="c-hero" <?php echo( $hero_background_color ? 'style="background-color:'.$hero_background_color.';"' : '' ); ?> >
             <div class="o-wrapper-md">
                 <div class="c-hero__title no-mb">
                     <?php echo( $hero_title ? $hero_title : the_title() ); ?>
@@ -20,7 +20,7 @@ include "variables-precommander.php";
             </div>
         </section>
 
-        <section class="c-forms c-forms--preorder" style="background-color:<?php echo( $form_background_color ); ?>;">
+        <section class="c-forms c-forms--preorder" <?php echo( $form_background_color ? 'style="background-color:'.$form_background_color.';"' : '' ); ?> >
             <div class="o-wrapper-xl">
                 <div class="c-forms__form-container">
                     <?php echo( $form_shortcode ); ?>

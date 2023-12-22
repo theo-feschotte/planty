@@ -12,7 +12,16 @@ include "variables-rencontrer.php";
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
 
-        <section class="c-hero <?php echo( $hero_image ? 'c-hero--bg-img' : '' ); ?>" style="background-image:url('<?php echo( $hero_image["url"] ); ?>'); background-color:<?php echo( $hero_background_color ); ?>;">
+        <section class="c-hero <?php echo( $hero_image ? 'c-hero--bg-img' : '' ); ?>"
+            <?php
+                if ($hero_image || $hero_background_color) {
+                    echo('style="');
+                        echo( $hero_image ? 'background-image:url('.$hero_image["url"].');' : '' );
+                        echo( $hero_background_color ? 'background-color:'.$hero_background_color.';' : '' );
+                    echo('"');
+                };
+            ?>
+        >
             <div class="o-wrapper-md">
                 <div class="c-hero__title">
                     <?php echo( $hero_title ? $hero_title : the_title() ); ?>
@@ -20,7 +29,16 @@ include "variables-rencontrer.php";
             </div>
         </section>
 
-        <section class="c-teams" style="background-image:url('<?php echo( $team_background_image["url"] ); ?>'); background-color:<?php echo( $team_background_color ); ?>;">
+        <section class="c-teams"
+            <?php
+                if ($team_background_image || $team_background_color) {
+                    echo('style="');
+                        echo( $team_background_image ? 'background-image:url('.$team_background_image["url"].');' : '' );
+                        echo( $team_background_color ? 'background-color:'.$team_background_color.';' : '' );
+                    echo('"');
+                };
+            ?>
+        >
             <div class="o-wrapper-xl">
                 <div class="c-teams__title">
                     <?php echo( $team_title ); ?>
@@ -43,14 +61,14 @@ include "variables-rencontrer.php";
             </div>
         </section>
 
-        <section class="c-forms" style="background-color:<?php echo( $form_background_color ); ?>;">
+        <section class="c-forms" <?php echo( $form_background_color ? 'style="background-color:'.$form_background_color.';"' : '' ); ?> >
             <div class="o-wrapper-sm">
                 <div class="c-forms__title">
                     <?php echo( $form_title ); ?>
                 </div>
             </div>
             <div class="o-wrapper-md">
-                <div class="c-forms__form-container" style="background-image:url('<?php echo( $form_background_image["url"] ); ?>');">
+                <div class="c-forms__form-container" <?php echo( $form_background_image ? 'style="background-image:url("'.$form_background_image["url"].'");"' : '' ); ?> >
                     <?php echo( $form_shortcode ); ?>
                 </div>
             </div>

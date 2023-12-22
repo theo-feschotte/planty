@@ -2,8 +2,8 @@
 
 // Nous rencontrer -- HERO
 $hero_title = get_field( "rencontrer__hero_title" );
-$hero_background_color = get_field( "rencontrer__hero_background_color" );
 $hero_image = get_field( "rencontrer__hero_image" );
+$hero_background_color = get_field( "rencontrer__hero_background_color" );
 
 
 // Nous rencontrer -- LISTE EQUIPE
