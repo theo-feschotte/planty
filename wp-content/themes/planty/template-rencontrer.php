@@ -68,7 +68,15 @@ include "variables-rencontrer.php";
                 </div>
             </div>
             <div class="o-wrapper-md">
-                <div class="c-forms__form-container" <?php echo( $form_background_image ? 'style="background-image:url("'.$form_background_image["url"].'");"' : '' ); ?> >
+                <div class="c-forms__form-container"
+                    <?php
+                        if ($form_background_image) {
+                            echo('style="');
+                                echo( $form_background_image ? 'background-image:url('.$form_background_image["url"].');' : '' );
+                            echo('"');
+                        };
+                    ?>
+                >
                     <?php echo( $form_shortcode ); ?>
                 </div>
             </div>

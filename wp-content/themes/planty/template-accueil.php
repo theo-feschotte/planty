@@ -45,10 +45,10 @@ include "variables-accueil.php";
                     } ?>
                 </ul>
                 <?php
-                    echo( '<a class="c-flavours__link btn-link"' );
-                    echo( 'href="'.$flavours_link["url"].'"' );
-                    echo( $flavours_link["target"] ? $flavours_link["target"] : 'target="_self"' );
-                    echo( '>'.$flavours_link["title"].'</a>' );
+                    echo( '<a class="c-flavours__link btn-link" ' );
+                    echo( 'href="'.$flavours_link["url"].'" ' );
+                    echo( $flavours_link["target"] ? $flavours_link["target"] : 'target="_self">' );
+                    echo( $flavours_link["title"].'</a>' );
                 ?>
             </div>
         </section>

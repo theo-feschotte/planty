@@ -10,7 +10,14 @@ $footer_background_color = get_field( "footer_background_color" );
 
         <footer id="footer" class="c-footer">
 
-            <?php echo( $footer_image ? '<div class="c-footer__bg-img" style="background-image:url('.$footer_image["url"].'); background-color:'.$footer_background_color.';"></div>' : "" ); ?>
+            <?php
+                if ($footer_image) {
+                    echo( '<div class="c-footer__bg-img" style="' );
+                        echo( $footer_image ? 'background-image:url('.$footer_image["url"].');' : '' );
+                        echo( $footer_background_color ? 'background-color:'.$footer_background_color.';' : '' );
+                    echo( '"></div>' );
+                };
+            ?>
             
             <div class="o-wrapper-xl">
                 <?php
